@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+ //<?php
+ //include('../controller/logincontroller.php')
+ //?>
+
 <html>
 <head>
 <style>
@@ -19,7 +22,7 @@
 	     <style>
 	            .login-div
 				{
-					background-color: WHITE;
+					background-color: yellow;
 				border:1px solid black;
 				margin:auto;
 				width:20%;
