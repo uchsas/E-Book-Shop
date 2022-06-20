@@ -1,6 +1,10 @@
+<?php
+ include('../controller/logincontroller.php')
+	   ?>
 <html>
 <head>
 </head>
+
 <body>
 <body background="pet.jpg">
 <html>
@@ -34,15 +38,18 @@
         <tr>
           <td>Username:</td>
           <td><input type="text" name="user" placeholder="Enter name Here"></td>
-        </tr>
+        <span><?php echo $Usernameerr;?></span></td>
+		</tr>
         <tr>
           <td>Password:</td>
           <td><input type="password" name="user_pass" placeholder="Enter Password Here"></td>
-        </tr>
+        <span><?php echo $passworderr;?></span></td>
+		</tr>
         <tr>
           <td>Email:</td>
           <td><input type="email" name="mail" placeholder="Enter Email Here"></td>
-        </tr>
+         <span><?php echo $emailErr;?></span></td>
+		</tr>
         <tr>
           <td>Gender:</td>
           <td>
