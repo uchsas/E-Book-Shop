@@ -1,6 +1,6 @@
- //<?php
- //include('../controller/logincontroller.php')
- //?>
+  <?php
+ include('../controller/logincontroller.php')
+	   ?> 
 
 <html>
 <head>
@@ -43,16 +43,19 @@
         <tr>
           <td>Username:</td>
           <td><input type="text" name="user" placeholder="Enter name Here"></td>
+				<span class="error"><?php echo $Usernameerr;?></span>
         </tr>
         <tr>
           <td>Password:</td>
           <td><input type="password" name="user_pass" placeholder="Enter Password Here"></td>
-        </tr>
+        				<span class="error"><?php echo $passworderr;?></span>
+
+		</tr>
         
         
       </table>
 				<tr>
-				<td><input type="submit" name="login" value="Login"></td>
+				<td><input type="submit" name="login" value="Login"><a href="homepage.php"></td>
 				</tr>
 		      </table>
 			  </form>
