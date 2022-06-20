@@ -1,20 +1,27 @@
 <?php 
 
-		$nameErr = $passworderr = $emailErr = $genderErr = "" ;
-    	$Password = $Username =  $Email = $gender "";
+		$Usernameerr = $emailErr = $passworderr = "" ;
+    	$password = $Username =  "";
 
-    	
-	    	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["Username"])) {
-    $nameErr = "Name is required";
-  } else {
-    $Username = test_input($_POST["Username"]);
-
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$Username)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-    		
+    	if ($_SERVER["REQUEST_METHOD"] == "POST")
+	    {
+	    	if(empty($_POST["User_name"]))
+    		{
+    		$Usernameerr = "*Insert Username";
+    		} 
+    		else
+    			{
+    		$Username = ($_POST["User_name"]);
+    		if (preg_match('/^[a-zA-Z0-9]$/', $Username)) 
+    		{
+    			$Usernameerr = "*Invalid Input";
+    		}
+    		elseif (str_word_count($Username)<2) 
+    		{
+    			$Usernameerr = "*Minimum Two Characters";
+    		}
+		    	
+			}
 
 			if(empty($_POST["password"]))
     		{
