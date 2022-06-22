@@ -13,13 +13,13 @@
                                <th>Username</th>   
                                <th>Address</th>   
                                <th>Gender</th>   
-							    <th>Email</th> 
+		               <th>Email</th> 
                                <th>Password</th>  
                                <th>Phone</th>   
                               
                           </tr>  
                           <?php   
-                          $data = file_get_contents("data.json");  
+                          $data = file_get_contents("/model/data.json");  
                           $data = json_decode($data, true);  
                           foreach($data as $row)  
                           {  
@@ -29,9 +29,9 @@
                                <td>'.$row["uname"].'</td>
                                <td>'.$row["pass"].'</td>
                                <td>'.$row["email"].'</td>
-							   <td>'.$row["number"].'</td>
-					           <td>'.$row["add"].'</td>
-							    <td>'.$row["gender"].'</td>
+			       <td>'.$row["number"].'</td>
+			       <td>'.$row["add"].'</td>
+			       <td>'.$row["gender"].'</td>
 
 
                                </tr>';  
