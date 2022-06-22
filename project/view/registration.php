@@ -1,81 +1,77 @@
-<?php
+ <?php
  include('../controller/logincontroller.php')
 	   ?>
 <html>
-<head>
-</head>
-
-<body>
-<body background="pet.jpg">
-<html>
-    <head>
-	<title>Registration</title>
-	
-	     <style>
-	            .regi-div
-				{
-					
-				border:1px solid black;
-				margin:auto;
-				width:20%;
-				margin-top:17%;
-				
-				}
-				
- 		 </style>
+       <title>SignUP</title>
+	<head> 
+	<style>
+	.login-div{
+		border:1px solid black;
+		margin:auto;
+		width:40%;
+		margin-top:15%
+	}
+	</style>
 	</head>
 	<body>
-	<div class="regi-div">
-	 <fieldset>
-        <legend align="center"><h1>Registration</h1></legend>
-	   
-  <center>
-  <h3>Register Here</h3>
-  <form action="" method="post">
-  	       <table align="center">
-
-      <table>
-        <tr>
-          <td>Username:</td>
-          <td><input type="text" name="user" placeholder="Enter name Here"></td>
-        <span><?php echo $Usernameerr;?></span></td>
-		</tr>
-        <tr>
-          <td>Password:</td>
-          <td><input type="password" name="user_pass" placeholder="Enter Password Here"></td>
-        <span><?php echo $passworderr;?></span></td>
-		</tr>
-        <tr>
-          <td>Email:</td>
-          <td><input type="email" name="mail" placeholder="Enter Email Here"></td>
-         <span><?php echo $emailErr;?></span></td>
-		</tr>
-        <tr>
-          <td>Gender:</td>
-          <td>
-          <input type="radio" name="gender"> Male
-          <input type="radio" name="gender"> Female
-          <input type="radio" name="gender"> Others
-          </td>
-        </tr>
-        <tr>
-          <td>Phone:</td>
-          <td>
-            <select name="country_code">
-              <option value="+254">+088</option>
-              <option value="+255">+255</option>
-              
-            </select>
-            <input type="phone" name="mob_digits" placeholder="01******">
-          </td>
-        </tr>
-        <tr>
-           <td><input type="submit" name="submit" value="submit"></td>
-           <td><p>Already a user? <a href="login.php">Login Here</a></p></td>
-        </tr>
-      </table>
-  </form>
-  
-  </center>
-</body>
-</html>
+	<body background="pet.jpg">
+	<div class="login-div">
+		<fieldset>
+		<legend align="center"><h1>Account Registration</h1></legend>
+	<form action="" onsubmit="return validateRegistration()" method="post">
+			<table align="center"> 
+			<h2 align="center">Personal Information</h2>	
+				<tr>
+					<td><span><b>First Name:<b></span></td>
+					<td>:<input type="text" id="fname" name="fname" value="<?php echo $fname;?>" placeholder="First Name">
+					<span id="err_fname"> </span> <span><?php echo $err_fname;?></span> </td>
+				</tr>
+				<tr>
+					<td><span><b>Last Name:</b></span></td>
+					<td>:<input type="text" name="lname" id="lname" value="<?php echo $lname;?>" placeholder="Last Name">
+					<span id="err_lname"></span> <span><?php echo $err_lname;?></span> </td>
+				</tr>
+				<tr>
+					<td><span><b>Username:</b></span></td>
+					<td>:<input type="text" name="uname" onfocusout="checkusername(this)"  id="uname" value="<?php echo $uname;?>" placeholder="Username">
+					<span id="err_uname"></span> <span><?php echo $err_uname;?></span> </td>
+				</tr>
+				<tr>
+					<td><span><b>Address:</b></span></td>
+					<td>:<input type="text" name="ad" id="ad" value="<?php echo $ad;?>"placeholder="Address">
+					<span id="err_ad"></span> <span><?php echo $err_ad;?></span> </td>
+				</tr>	
+				
+				<tr>
+					<td><span><b>Gender:</b></span></td>
+					<td>:<input type="radio" name="gender" id="male" value="Male"><span>Male</span>
+					     <input type="radio" name="gender" id="female" value="Female"><span>Female</span> <br>
+						 <span id="err_gender"></span> <span><?php echo $err_gender;?></span></td>
+				</tr>
+				
+				<tr>
+					<td><span><b>Email:</b></span></td>
+					<td><input type="text" value="<?php echo $email;?>" name="email" id="email" placeholder="Mail Address">
+					<span id="err_email"></span> <span><?php echo $err_email;?></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Password:</b></span></td>
+					<td><input type="password" name="pass" id="pass" value="<?php echo $pass;?>" placeholder="Password">
+					<span id="err_pass"></span> <span><?php echo $err_pass;?></span></td>
+				</tr>
+				<tr>
+					<td><span><b>Phone:</b></span></td>
+					<td><input type="text" name="number" id="number" value="<?php echo $number;?>"placeholder="Number">
+					<span id="err_number"></span> <span><?php echo $err_number;?></span> </td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="sign_up" value="Sign Up"></td>
+					<td><center><a style="text-decoration:none" href="login.php" target="" >Login</a></center></td>
+				</tr>
+			</table>
+	</form>	
+	</fieldset>
+	</div>
+	</body>
+	
+ </html>
