@@ -1,8 +1,0 @@
-<?php
-session_start();
-
-if(session_destroy()) // Destroying All Sessions
-{
-<a href="login.php">Admin</a>; // Redirecting To Home Page
-}
-?>
